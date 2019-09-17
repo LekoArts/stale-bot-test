@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: 0 0 * * *
+name: Run Stale Bot every 24 hours
+jobs:
+  build:
+    name: probot/stale-action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: probot/stale-action
+        uses: probot/stale-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
