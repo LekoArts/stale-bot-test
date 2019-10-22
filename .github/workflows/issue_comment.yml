@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: npm install
-      - run: npm build
+      - run: npm run build
       - name: stale
         uses: LekoArts/stale@experiment
         with:
