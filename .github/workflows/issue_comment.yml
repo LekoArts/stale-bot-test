@@ -1,12 +1,16 @@
 on: issue_comment
-name: Run Stale Bot on issue comments
+name: Run Stale Bot on Issue Comments
 jobs:
   build:
-    name: probot/stale-action
+    name: stale
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: probot/stale-action
-        uses: probot/stale-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: stale
+        uses: LekoArts/stale@experiment
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: 'message blabla'
+          exempt-issue-labels: |
+            not stale
+            important
