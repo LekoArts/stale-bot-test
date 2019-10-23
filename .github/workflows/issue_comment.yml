@@ -11,7 +11,6 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'marking this as stale message'
-          unmark-message: 'unmarking this as stale'
           close-message: 'closing message'
           exempt-issue-labels: |
             not stale
