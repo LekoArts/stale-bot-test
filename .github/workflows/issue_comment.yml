@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: npm install
-      - run: npm run build
       - name: stale
         uses: LekoArts/stale@experiment
         with:
