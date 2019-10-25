@@ -1,4 +1,6 @@
-on: issue_comment
+on:
+  schedule:
+    - cron: "0 12 * * *"
 name: Run Stale Bot on Issue Comments
 jobs:
   build:
