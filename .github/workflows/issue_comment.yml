@@ -12,14 +12,16 @@ jobs:
       - name: stale
         uses: LekoArts/stale@experiment
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          stale-issue-message: 'marking this as stale message'
-          days-before-stale: 1
-          days-before-close: 1
-          stale-issue-label: 'stale?'
-          stale-pr-label: 'stale?'
-          operations-per-run: 30
-          close-message: 'closing message'
-          exempt-issue-labels: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_STALE_CHANNEL_ID: ${{ secrets.SLACK_STALE_CHANNEL_ID }}
+          DAYS_BEFORE_STALE: 1
+          DAYS_BEFORE_CLOSE: 1
+          STALE_ISSUE_LABEL: 'stale?'
+          STALE_PR_LABEL: 'stale?'
+          OPERATIONS_PER_RUN: 30
+          STALE_ISSUE_MESSAGE: 'marking this as stale message'
+          CLOSE_MESSAGE: 'closing message'
+          EXEMPT_ISSUE_LABELS: |
             not stale
             important
