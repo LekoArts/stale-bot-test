@@ -14,6 +14,11 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'marking this as stale message'
+          days-before-stale: 0
+          days-before-close: 1
+          stale-issue-label: 'stale?'
+          stale-pr-label: 'stale?'
+          operations-per-run: 30
           close-message: 'closing message'
           exempt-issue-labels: |
             not stale
