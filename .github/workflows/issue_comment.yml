@@ -15,6 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           SLACK_STALE_CHANNEL_ID: ${{ secrets.SLACK_STALE_CHANNEL_ID }}
+          DRY_RUN: true
           DAYS_BEFORE_STALE: 1
           DAYS_BEFORE_CLOSE: 1
           STALE_ISSUE_LABEL: 'stale?'
