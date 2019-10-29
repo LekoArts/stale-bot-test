@@ -10,16 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: stale
+        id: stale
         uses: LekoArts/stale@experiment
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          SLACK_STALE_CHANNEL_ID: ${{ secrets.SLACK_STALE_CHANNEL_ID }}
           DAYS_BEFORE_STALE: 1
           DAYS_BEFORE_CLOSE: 1
-          STALE_ISSUE_LABEL: 'stale?'
-          STALE_PR_LABEL: 'stale?'
-          OPERATIONS_PER_RUN: 30
           STALE_ISSUE_MESSAGE: |
             Hiya!
             
@@ -41,3 +37,9 @@ jobs:
           EXEMPT_ISSUE_LABELS: |
             not stale
             important
+      - name: Post slack report
+        uses: pullreminders/slack-action@v1.0.7
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: '{"channel": "${{ secrets.SLACK_STALE_CHANNEL_ID }}", "text": "", "blocks": "${{ steps.stale.outputs.blocks }}"}'
