@@ -42,4 +42,4 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
         with:
-          args: '{"channel": "${{ secrets.SLACK_STALE_CHANNEL_ID }}", "text": "", "blocks": "${{ steps.stale.outputs.blocks }}"}'
+          args: '{\"channel\": \"${{ secrets.SLACK_STALE_CHANNEL_ID }}\", \"text\": \"\", \"blocks\": \"${{ steps.stale.outputs.blocks }}\"}'
