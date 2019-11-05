@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
       - name: stale
         id: stale
-        uses: LekoArts/stale@experiment
+        uses: gatsbyjs/stale@gatsby-refactoring
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DAYS_BEFORE_STALE: 1
