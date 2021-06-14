@@ -35,3 +35,4 @@ jobs:
             Thanks again for being part of the Gatsby community! 💪💜
           stale-issue-label: "stale?"
           exempt-issue-labels: "not stale,status: triage needed"
+          remove-stale-when-updated: true
