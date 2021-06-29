@@ -5,11 +5,11 @@ body:
 - type: markdown
   attributes:
     value: |
-      ## Hello 👋 
+      ## Welcome 👋 
       
       Thanks for taking the time to fill out this bug report.
       
-      Please fill out each section below, otherwise, your issue will be closed. This info allows Gatsby maintainers to diagnose (and fix!) your issue as quickly as possible.
+      Please fill out each section below. This info allows Gatsby maintainers to diagnose (and fix!) your issue as quickly as possible. Otherwise we might need to close the issue without e.g. clear reproduction steps.
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
@@ -58,6 +58,14 @@ body:
 - type: textarea
   attributes:
     label: Environment
-    description: Run "gatsby info --clipboard" in your project directory and paste the output here. Also name any "flags" you use inside "gatsby-config.js".
+    render: shell
+    description: Run "gatsby info --clipboard" in your project directory and paste the output here.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Your gatsby-config.js
+    render: javascript
+    description: Please paste your gatsby-config.js here (redact any secrets/API keys you might use).
   validations:
     required: true
