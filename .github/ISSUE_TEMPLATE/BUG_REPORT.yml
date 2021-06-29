@@ -4,7 +4,12 @@ labels: "type: bug"
 body:
 - type: markdown
   attributes:
-    value: "Hello! Thanks for taking the time to fill out this bug report. Please fill out each section below, otherwise, your issue will be closed. This info allows Gatsby maintainers to diagnose (and fix!) your issue as quickly as possible."
+    value: |
+      ## Hello 👋 
+      
+      Thanks for taking the time to fill out this bug report.
+      
+      Please fill out each section below, otherwise, your issue will be closed. This info allows Gatsby maintainers to diagnose (and fix!) your issue as quickly as possible.
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
